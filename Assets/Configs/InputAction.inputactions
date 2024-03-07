@@ -16,7 +16,7 @@
                 },
                 {
                     "name": "Slide",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "0840fe17-af86-4805-b6db-2c1348503186",
                     "expectedControlType": "Button",
                     "processors": "",

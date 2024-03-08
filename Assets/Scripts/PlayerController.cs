@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] BoxCollider2D collider;
 
     [Header("Space")]
-    [SerializeField] float jumpSpeed;
+    [SerializeField] float jumpPower;
     [SerializeField] float moveSpeed;
     [SerializeField] int jumpCount;
     [SerializeField] bool isGround;
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         // jumpspeed만큼 up
-        rigid.velocity = Vector2.up * jumpSpeed;
+        rigid.velocity = Vector2.up * jumpPower;
 
         // jump를 실행했을때 jumpCount가 1로 바뀌면서 DoubleJump 가능
         jumpCount++;
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     private void DoubleJump()
     {
         // jump한 상태에서 jumpspeed만큼 up
-        rigid.velocity = Vector2.up * jumpSpeed;
+        rigid.velocity = Vector2.up * jumpPower;
 
         // DoubleJump를 실행했을때 jumpCount가 2로 바뀌면서 어떤 Jump도 실행하지않음
         jumpCount++;
@@ -58,14 +58,15 @@ public class PlayerController : MonoBehaviour
     // Ground와 Player의 Collider가 서로 충돌 할 때 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        // Gorund에 닿으면서 JumpCount 초기화
+        isGround = true;
+        jumpCount = 0;
+
         // 설정한 Bool(변수명, 값)을 넣음
         // ISGround가 true일때 Enter가 됨
         animator.SetBool("IsGround", isGround);
         animator.SetBool("DoubleJump", false);
 
-        // Gorund에 닿으면서 JumpCount 초기화
-        isGround = true;
-        jumpCount = 0;
     }
 
     // Ground와 Player의 Collider가 서로 충돌하지 않을때

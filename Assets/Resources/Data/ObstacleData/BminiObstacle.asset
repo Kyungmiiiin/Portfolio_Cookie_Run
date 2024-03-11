@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 466a98b67f4b93a4a8fbefc8ff3e1905, type: 3}
-  m_Name: BigBearJelly
+  m_Script: {fileID: 11500000, guid: c239f9a03b087234d9fe03d110c7a090, type: 3}
+  m_Name: BminiObstacle
   m_EditorClassIdentifier: 
-  jellyType: 0
-  icon: {fileID: -924980208, guid: 829aac9f8bd317a4f94208071ad00f03, type: 3}
-  point: 10000
+  ObstacleType: 1
+  icon: {fileID: 21300000, guid: 38e1c0b1bacb79e4a84434400870420a, type: 3}
+  dmg: 30

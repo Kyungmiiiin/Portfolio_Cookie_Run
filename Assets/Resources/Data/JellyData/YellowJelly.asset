@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466a98b67f4b93a4a8fbefc8ff3e1905, type: 3}
   m_Name: YellowJelly
   m_EditorClassIdentifier: 
+  jellyType: 3
   icon: {fileID: 1555882424, guid: 829aac9f8bd317a4f94208071ad00f03, type: 3}
   point: 1000

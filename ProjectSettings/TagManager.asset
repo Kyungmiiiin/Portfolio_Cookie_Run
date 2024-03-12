@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - BackGround3
   - BackGround4
   - Player
-  - 
-  - 
+  - Obstacle
+  - Damaged
   - 
   - 
   - 
@@ -58,4 +60,13 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3429421819
+    locked: 0
+  - name: Obstacle
+    uniqueID: 1116612661
+    locked: 0
+  - name: Jelly
+    uniqueID: 1696900033
+    locked: 0
+  - name: Damaged
+    uniqueID: 3093416277
     locked: 0

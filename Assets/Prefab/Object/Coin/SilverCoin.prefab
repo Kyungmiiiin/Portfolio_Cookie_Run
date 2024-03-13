@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 5988587675721605323}
   - component: {fileID: 185208367286817615}
   - component: {fileID: -7954611880819852760}
-  - component: {fileID: 6171208306208104588}
   - component: {fileID: -1307221567393497525}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SilverCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,20 +126,6 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 734a5748313033a499a6eb97f45faaf7, type: 2}
   moveSpeed: 12
   moveDirection: {x: -1, y: 0, z: 0}
---- !u!114 &6171208306208104588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987899610105802755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 481092cc15e545d48820e7d078f98942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoRelease: 0
-  releaseTime: 0
 --- !u!58 &-1307221567393497525
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class CoinPooler : MonoBehaviour
         {
             for (int i = 0; i < prefabs.Length; i++)
             {
-                PooledObject Obstacle = Manager.Pool.GetPool(prefabs[i], spawnPoint.position, spawnPoint.rotation);
+                PooledObject Coin = Manager.Pool.GetPool(prefabs[i], spawnPoint.position, spawnPoint.rotation);
             }
             delay = delayTime;
         }

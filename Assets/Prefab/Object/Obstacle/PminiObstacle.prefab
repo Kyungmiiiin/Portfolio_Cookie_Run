@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 5317283941544626293}
   - component: {fileID: 1534530073885552400}
   - component: {fileID: 5765708376993540333}
-  - component: {fileID: 775564545733778147}
   - component: {fileID: -6187854965025625481}
   - component: {fileID: -3591573490157769490}
-  m_Layer: 0
+  - component: {fileID: 1126255496409496218}
+  m_Layer: 11
   m_Name: PminiObstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,23 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderer: {fileID: 1534530073885552400}
-  data: {fileID: 11400000, guid: 693705e3e023b444b840749155a6ff02, type: 2}
+  <data>k__BackingField: {fileID: 11400000, guid: 693705e3e023b444b840749155a6ff02, type: 2}
   moveSpeed: 12
   moveDirection: {x: -1, y: 0, z: 0}
---- !u!114 &775564545733778147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5348265291292721353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 481092cc15e545d48820e7d078f98942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoRelease: 0
-  releaseTime: 0
 --- !u!58 &-6187854965025625481
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -147,7 +133,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -168,7 +154,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 100
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -180,3 +166,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &1126255496409496218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348265291292721353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481092cc15e545d48820e7d078f98942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRelease: 0
+  releaseTime: 0

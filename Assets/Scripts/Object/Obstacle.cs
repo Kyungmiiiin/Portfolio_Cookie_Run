@@ -5,7 +5,7 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     [SerializeField] new SpriteRenderer renderer;
-    [SerializeField] ObstacleData data;
+    [field: SerializeField] public ObstacleData data { get; private set; }
     [SerializeField] float moveSpeed;
     [SerializeField] Vector3 moveDirection;
 

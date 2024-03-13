@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] BoxCollider2D collider;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] ObstacleData[] obstacleDatas;
 
     [Header("Space")]
     [SerializeField] int hp;
@@ -60,18 +61,52 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("DoubleJump", true);
     }
 
-    // Ground와 Player의 Collider가 서로 충돌 할 때 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.tag == "Obstacle")
         {
-            
-            // obstacle layer를 만날때 damage를 입음
-            Debug.Log("충돌!");
+
+            animator.SetBool("Damaged", true);
+
+            // 충돌 시 무적상태가 됨
+            gameObject.layer = 12;
+
+            // Player의 투명도를 낮춰 무적상태임을 나타냄
+            spriteRenderer.color = new Color(1, 1, 1, 0.4f);
+
+            // 무적 상태의 시간
+            Invoke("OnTriggerExit", 5);
+
+            if (this.hp != 0)
+            {
+                // 충돌한 Obstacle의 dmg만큼 Player의 hp가 깎임
+                this.hp -= collision.gameObject.GetComponent<Obstacle>().data.dmg;
+            }
+            else if(this.hp <= 0)
+            {
+                OnDie();
+            }
+
         }
-        
-        
+        else
+        {
+            animator.SetBool("Damaged", false);
+        }
+
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        // 무적상태 해제
+        gameObject.layer = 10;
+
+        spriteRenderer.color = new Color(1, 1, 1, 1);
+    }
+
+
+    // Ground와 Player의 Collider가 서로 충돌 할 때
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
 
         // Gorund에 닿으면서 JumpCount 초기화
         isGround = true;
@@ -86,11 +121,13 @@ public class PlayerController : MonoBehaviour
     // Ground와 Player의 Collider가 서로 충돌하지 않을때
     public void OnCollisionExit2D(Collision2D collision)
     {
-       
+
         // ISGround가 false일때 Exit가 됨
         isGround = false;
         animator.SetBool("IsGround", isGround);
     }
+
+
     private void Slide()
     {
         animator.SetBool("IsSlide", true);
@@ -118,24 +155,12 @@ public class PlayerController : MonoBehaviour
             collider.offset = new Vector2(collider.offset.x, offset);
         }
     }
-    
-    private void OnDamaged(Vector2 tagetPos)
+
+    private void OnDie()
     {
-        // 충돌 시 무적상태
-        gameObject.layer = 12;
-
-        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
-        // 무적 상태의 시간
-        Invoke("OffDamaged", 2);
-    }
-    private void OffDamaged()
-    {
-        // 무적상태 해제
-        gameObject.layer = 10;
-
-        spriteRenderer.color = new Color(1, 1, 1, 1);
-
+        animator.SetBool("Die", true);
     }
 }
+
 
 

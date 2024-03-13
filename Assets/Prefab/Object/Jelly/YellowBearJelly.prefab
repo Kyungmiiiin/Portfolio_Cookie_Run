@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6341366922786213604}
   - component: {fileID: 5305490102851827501}
   - component: {fileID: -5179462565257246587}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: YellowBearJelly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ MonoBehaviour:
   autoRelease: 0
   releaseTime: 0
   renderer: {fileID: 7369170429266909691}
-  data: {fileID: 11400000, guid: 762cff7582b92a541bd5af26750ce8e5, type: 2}
+  <data>k__BackingField: {fileID: 11400000, guid: 762cff7582b92a541bd5af26750ce8e5, type: 2}
   moveSpeed: 12
   moveDirection: {x: -1, y: 0, z: 0}
 --- !u!58 &6341366922786213604

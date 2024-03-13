@@ -10,7 +10,15 @@ public class JellyPooler : MonoBehaviour
     private float delayTime;
     private Stack<PooledObject> objectPool;  // 보관함 생성
     private int poolSize = 50;  // 초기 크기
-
+    List<Jelly> prefabJellyData;
+    private void Awake()
+    {
+        prefabJellyData = new List<Jelly>();
+        foreach (var element in prefabs)
+        {
+            prefabJellyData.Add(element.GetComponent<Jelly>());
+        }
+    }
 
     private void Start()
     {
@@ -31,11 +39,22 @@ public class JellyPooler : MonoBehaviour
         {
             for (int i = 0; i < prefabs.Length; i++)
             {
-                PooledObject Obstacle = Manager.Pool.GetPool(prefabs[i], spawnPoint.position, spawnPoint.rotation);
+                PooledObject Jelly = Manager.Pool.GetPool(prefabs[i], spawnPoint.position, spawnPoint.rotation);
             }
             delay = delayTime;
         }
 
+    }
+    public void SetData(int type, Vector2 setPos)
+    {
+        int idx = -1;
+        for (int i = 0; i < prefabJellyData.Count; i++)
+        {
+            if (prefabJellyData[i].data.jellyType == type)
+            {
+                PooledObject Jelly = Manager.Pool.GetPool(prefabs[i], spawnPoint.position, spawnPoint.rotation);
+            }
+        }
     }
 }
 

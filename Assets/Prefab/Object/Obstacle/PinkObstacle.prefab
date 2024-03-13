@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 226661432000770356}
   - component: {fileID: 2625543468694085143}
   - component: {fileID: 7551695210561824948}
-  - component: {fileID: -5902242014786025778}
   - component: {fileID: 2720075915248483814}
   - component: {fileID: -4745093891328151463}
-  m_Layer: 0
+  - component: {fileID: -5390141795413738035}
+  m_Layer: 11
   m_Name: PinkObstacle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -101,23 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderer: {fileID: 2625543468694085143}
-  data: {fileID: 11400000, guid: e45d7a4d04c0e9640a9ed3d18f927976, type: 2}
+  <data>k__BackingField: {fileID: 11400000, guid: e45d7a4d04c0e9640a9ed3d18f927976, type: 2}
   moveSpeed: 12
   moveDirection: {x: -1, y: 0, z: 0}
---- !u!114 &-5902242014786025778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3724962873251139283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 481092cc15e545d48820e7d078f98942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoRelease: 0
-  releaseTime: 0
 --- !u!70 &2720075915248483814
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -147,11 +133,11 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0, y: 0.20416212}
+  m_Size: {x: 1, y: 2.4083242}
   m_Direction: 0
 --- !u!50 &-4745093891328151463
 Rigidbody2D:
@@ -168,7 +154,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 100
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -180,3 +166,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &-5390141795413738035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724962873251139283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481092cc15e545d48820e7d078f98942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRelease: 0
+  releaseTime: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 public class Jelly : PooledObject
 {
     [SerializeField] new SpriteRenderer renderer;
-    [SerializeField] JellyData data;
+    [field: SerializeField] public JellyData data { get; private set; }
     [SerializeField] float moveSpeed;
     [SerializeField] Vector3 moveDirection;
      

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 363996778417213325}
   - component: {fileID: 6940575149358241395}
   - component: {fileID: 5729870871517503385}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: CherryJelly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   autoRelease: 0
   releaseTime: 0
   renderer: {fileID: 3034201745598517175}
-  data: {fileID: 11400000, guid: cbbda39b4cd03914a8e80b5a23916f09, type: 2}
+  <data>k__BackingField: {fileID: 11400000, guid: cbbda39b4cd03914a8e80b5a23916f09, type: 2}
   moveSpeed: 12
   moveDirection: {x: -1, y: 0, z: 0}
 --- !u!58 &6940575149358241395

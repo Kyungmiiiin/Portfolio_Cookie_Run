@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5545403544724726569}
   - component: {fileID: 3802727065873310123}
   - component: {fileID: 6119147062741810827}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PinkBearJelly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ MonoBehaviour:
   autoRelease: 0
   releaseTime: 0
   renderer: {fileID: 2032825861942938058}
-  data: {fileID: 11400000, guid: dda4bf1b931169348bd885601f4d317f, type: 2}
+  <data>k__BackingField: {fileID: 11400000, guid: dda4bf1b931169348bd885601f4d317f, type: 2}
   moveSpeed: 12
   moveDirection: {x: -1, y: 0, z: 0}
 --- !u!58 &5545403544724726569

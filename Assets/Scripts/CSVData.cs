@@ -13,6 +13,4 @@ public class CSVData : MonoBehaviour
 public class CSVDataList
 {
     public List<CSVData> CSVList = new List<CSVData>();
-
-
 }

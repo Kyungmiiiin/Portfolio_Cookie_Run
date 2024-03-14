@@ -8,7 +8,6 @@ using System;
 public class JellyData : ScriptableObject
 {
     // 젤리가 가질 수 있을만한 데이터를 입력
-    public int jellyType;
     public Sprite icon;
     public int point;
 }

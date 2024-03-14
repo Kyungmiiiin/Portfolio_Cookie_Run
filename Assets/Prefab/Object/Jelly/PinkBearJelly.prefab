@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1602489659530524584}
   - component: {fileID: 5545403544724726569}
   - component: {fileID: 3802727065873310123}
-  - component: {fileID: 6119147062741810827}
   m_Layer: 14
   m_Name: PinkBearJelly
   m_TagString: Untagged
@@ -155,19 +154,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoRelease: 0
   releaseTime: 10
---- !u!114 &6119147062741810827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8720066509332428064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d21f539304ceef64785b375111c6851c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jellyType: 0
-  jellyAmount: 0
-  jellYPos: 0
-  ObstacleType: 0

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObstacleType: 2
   icon: {fileID: 21300000, guid: e0c54fdfe0386c547af9ed9db53fcaeb, type: 3}
-  dmg: 20
+  dmg: 30

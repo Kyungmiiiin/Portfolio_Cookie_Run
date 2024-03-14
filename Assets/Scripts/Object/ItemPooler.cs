@@ -9,6 +9,7 @@ public class ItemPooler : MonoBehaviour
     [SerializeField] float delay;
     private float delayTime;
     public float PlayTime { get; private set; }
+
     private Stack<PooledObject> objectPool;  // 보관함 생성
     private int poolSize = 50;  // 초기 크기
 
@@ -31,7 +32,6 @@ public class ItemPooler : MonoBehaviour
         }
     }
     
-    int i;
     private void Update()
     {
         delayTime += Time.deltaTime;

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6218910076699903249}
   - component: {fileID: 6920650129698207069}
   - component: {fileID: -8330251605445297509}
-  - component: {fileID: -2964549974087582832}
   m_Layer: 14
   m_Name: BigBearJelly
   m_TagString: Untagged
@@ -31,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -155,19 +154,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoRelease: 0
   releaseTime: 1
---- !u!114 &-2964549974087582832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3767870954397604896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d21f539304ceef64785b375111c6851c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jellyType: 0
-  jellyAmount: 0
-  jellYPos: 0
-  ObstacleType: 0

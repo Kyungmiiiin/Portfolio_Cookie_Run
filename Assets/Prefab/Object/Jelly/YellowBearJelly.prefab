@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5709278796992749208}
   - component: {fileID: 6341366922786213604}
   - component: {fileID: 5305490102851827501}
-  - component: {fileID: -5179462565257246587}
   m_Layer: 14
   m_Name: YellowBearJelly
   m_TagString: Untagged
@@ -155,19 +154,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoRelease: 0
   releaseTime: 20
---- !u!114 &-5179462565257246587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6512747761740362566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d21f539304ceef64785b375111c6851c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jellyType: 0
-  jellyAmount: 0
-  jellYPos: 0
-  ObstacleType: 0

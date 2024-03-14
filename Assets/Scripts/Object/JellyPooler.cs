@@ -8,16 +8,19 @@ public class JellyPooler : MonoBehaviour
     [SerializeField] Transform spawnPoint;
     [SerializeField] float delay;
     private float delayTime;
+    public float PlayTime { get; private set; }
+
     private Stack<PooledObject> objectPool;  // 보관함 생성
     private int poolSize = 50;  // 초기 크기
-    List<Jelly> prefabJellyData;
+
+    [SerializeField] Transform[] point;
+
+    private List<Dictionary<string, object>> csv;
+
     private void Awake()
     {
-        prefabJellyData = new List<Jelly>();
-        foreach (var element in prefabs)
-        {
-            prefabJellyData.Add(element.GetComponent<Jelly>());
-        }
+        csv = CSVReader.Read("Data/CSV/CookieRun_CSV");
+        delayTime = 0f;
     }
 
     private void Start()
@@ -31,30 +34,46 @@ public class JellyPooler : MonoBehaviour
 
     private void Update()
     {
-        if (delay > 0)
+        delayTime += Time.deltaTime;
+        PlayTime += Time.deltaTime;
+        if (delayTime > delay)
         {
-            delay -= Time.deltaTime;
-        }
-        else
-        {
-            for (int i = 0; i < prefabs.Length; i++)
-            {
-                PooledObject Jelly = Manager.Pool.GetPool(prefabs[i], spawnPoint.position, spawnPoint.rotation);
-            }
-            delay = delayTime;
+            Debug.Log("시간체크");
+            delayTime = 0f;
+            Generate();
         }
 
+        //if (delay > 0)
+        //{
+        //    delay -= Time.deltaTime;
+        //}
+        //else
+        //{
+        //    for (int i = 0; i < prefabs.Length; i++)
+        //    {
+        //        PooledObject Jelly = Manager.Pool.GetPool(prefabs[i], spawnPoint.position, spawnPoint.rotation);
+        //    }
+        //    delay = delayTime;
+        //}
+
     }
-    public void SetData(int type, Vector2 setPos)
+    void Generate()
     {
-        int idx = -1;
-        for (int i = 0; i < prefabJellyData.Count; i++)
-        {
-            if (prefabJellyData[i].data.jellyType == type)
-            {
-                PooledObject Jelly = Manager.Pool.GetPool(prefabs[i], spawnPoint.position, spawnPoint.rotation);
-            }
-        }
+        if (csv.Count <= (int)PlayTime)
+            return;
+
+
+        csv[(int)PlayTime].TryGetValue("JellyType", out object obj);
+        // obj 가 없을때
+        if (obj == "")
+            return;
+
+        // CSV에서 데이터를 불러와서 생성할 때 사용
+        // PlayTime을 이용해서 게임시간 체크
+            PooledObject Jelly = Manager.Pool.GetPool(
+            prefabs[(int)csv[(int)PlayTime]["JellyType"]],
+            point[(int)csv[(int)PlayTime]["JellyYPos"]].position,
+            point[(int)csv[(int)PlayTime]["JellyYPos"]].rotation);
     }
 }
 

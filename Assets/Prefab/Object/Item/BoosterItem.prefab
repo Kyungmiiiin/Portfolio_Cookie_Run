@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4919301471526251303}
   - component: {fileID: 8025792323722668428}
   - component: {fileID: 8275765793872316811}
-  - component: {fileID: 7038795291132592438}
   - component: {fileID: 3486948540906846514}
+  - component: {fileID: -493765911102432559}
   m_Layer: 0
   m_Name: BoosterItem
   m_TagString: Untagged
@@ -122,24 +122,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.828125
---- !u!114 &7038795291132592438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 932893485854840414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49a2ff3183a13ad4aa8148d94bc855c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoRelease: 0
-  releaseTime: 0
-  animator: {fileID: 3486948540906846514}
-  data: {fileID: 11400000, guid: 3f3651c89c007e245a4d4d67113d0a81, type: 2}
-  moveSpeed: 12
-  moveDirection: {x: -1, y: 0, z: 0}
 --- !u!95 &3486948540906846514
 Animator:
   serializedVersion: 5
@@ -161,3 +143,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-493765911102432559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932893485854840414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a5b2db565d0364791616da809db0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRelease: 0
+  releaseTime: 0
+  animator: {fileID: 3486948540906846514}
+  data: {fileID: 11400000, guid: 3f3651c89c007e245a4d4d67113d0a81, type: 2}
+  moveSpeed: 12
+  moveDirection: {x: -1, y: 0, z: 0}
+  player: {fileID: 0}

@@ -9,7 +9,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 using UnityEngine.UI;
 using JetBrains.Annotations;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IScore
 {
     [Header("Components")]
     [SerializeField] Rigidbody2D rigid;
@@ -17,14 +17,28 @@ public class PlayerController : MonoBehaviour
     [SerializeField] BoxCollider2D collider;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] ObstacleData[] obstacleDatas;
+    [SerializeField] public int jellyScore;
+    [SerializeField] public int coinScore;
 
     [Header("Space")]
-    [SerializeField] int hp;
+    [SerializeField] public int hp;
+    [SerializeField] public int MaxHp;
     [SerializeField] float jumpPower;
-    [SerializeField] float moveSpeed;
+    [SerializeField] public float moveSpeed; 
     [SerializeField] int jumpCount;
     [SerializeField] bool isGround;
+    float curYSize;
+    float halfSize;
+    float offset;
+    float halfoffset;
 
+    private void Start()
+    {
+        curYSize = collider.size.y;
+        halfSize = curYSize / 2;
+        offset = collider.offset.y;
+        halfoffset = collider.offset.y / 2;
+    }
     // [Header("Events")]
     //public UnityEvent OnDied;
     private void Jump()
@@ -99,7 +113,6 @@ public class PlayerController : MonoBehaviour
     {
         // 무적상태 해제
         gameObject.layer = 10;
-
         spriteRenderer.color = new Color(1, 1, 1, 1);
     }
 
@@ -128,15 +141,14 @@ public class PlayerController : MonoBehaviour
     }
 
 
+
     private void Slide()
     {
         animator.SetBool("IsSlide", true);
 
-        // Slide Animation을 할때 Collider의 size와 offset을 줄여서 충돌범위를 줄임
-        float curYSize = collider.size.y;
-        collider.size = new Vector2(collider.size.x, curYSize / 2);
-        float offset = collider.offset.y;
-        collider.offset = new Vector2(collider.offset.x, offset / 2);
+        // Slide Animation을 할때 Collider의 size와 offset을 줄여서 충돌범위를 줄임   
+        collider.size = new Vector2(collider.size.x, halfSize);
+        collider.offset = new Vector2(collider.offset.x, halfoffset);
     }
 
     private void OnSlide(InputValue value)
@@ -148,10 +160,9 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool("IsSlide", false);
+
             // Slide Animation이 끝나면 Collider의 size와 offset을 원래의 상태로 복구시킴
-            float curYSize = collider.size.y;
             collider.size = new Vector2(collider.size.x, curYSize);
-            float offset = collider.offset.y;
             collider.offset = new Vector2(collider.offset.x, offset);
         }
     }
@@ -159,6 +170,19 @@ public class PlayerController : MonoBehaviour
     private void OnDie()
     {
         animator.SetBool("Die", true);
+    }
+
+    // bool 변수로 type을 나눠서 Jelly(true)와 Coin(false)를 구분함
+    public void GetScore(int score, bool type)
+    {
+       if(type)
+        {
+            jellyScore += score;
+        }
+       else
+        {
+            coinScore += score;
+        }
     }
 }
 

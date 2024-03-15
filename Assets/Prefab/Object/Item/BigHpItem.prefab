@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8004095987425992728}
   - component: {fileID: 5405044458947207787}
   - component: {fileID: 1689844618553007468}
-  - component: {fileID: 6310700371003368814}
   - component: {fileID: 3700910892220485617}
+  - component: {fileID: -5566826135854037190}
   m_Layer: 0
   m_Name: BigHpItem
   m_TagString: Untagged
@@ -108,24 +108,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6310700371003368814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8211346972030426769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49a2ff3183a13ad4aa8148d94bc855c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoRelease: 0
-  releaseTime: 0
-  animator: {fileID: 1689844618553007468}
-  data: {fileID: 11400000, guid: bd3bfce7f53814544bf52801a9a22dae, type: 2}
-  moveSpeed: 12
-  moveDirection: {x: -1, y: 0, z: 0}
 --- !u!58 &3700910892220485617
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -161,3 +143,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.0625
+--- !u!114 &-5566826135854037190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8211346972030426769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0cc346594d71746bd3350e806fbd6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRelease: 0
+  releaseTime: 0
+  animator: {fileID: 1689844618553007468}
+  data: {fileID: 11400000, guid: bd3bfce7f53814544bf52801a9a22dae, type: 2}
+  moveSpeed: 12
+  moveDirection: {x: -1, y: 0, z: 0}
+  player: {fileID: 0}

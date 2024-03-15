@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BigHpData
   m_EditorClassIdentifier: 
   controller: {fileID: 9100000, guid: 4e034dbfdd0404d43ab0e481638fd685, type: 2}
+  ItemType: 0
   extraSpeed: 0
-  extraHp: 100
+  extraHp: 50
   extraSize: {x: 0, y: 0, z: 0}

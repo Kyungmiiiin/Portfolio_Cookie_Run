@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5280484028092553841}
   - component: {fileID: 4371057947252522378}
   - component: {fileID: 5116838586006758422}
-  - component: {fileID: 566597193927988857}
   - component: {fileID: 1507545390888636465}
+  - component: {fileID: 7388474029647444276}
   m_Layer: 0
   m_Name: GiantItem
   m_TagString: Untagged
@@ -108,24 +108,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &566597193927988857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6876556826223138057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49a2ff3183a13ad4aa8148d94bc855c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoRelease: 0
-  releaseTime: 0
-  animator: {fileID: 5116838586006758422}
-  data: {fileID: 11400000, guid: 20e5e3346784e664185893015194a7a0, type: 2}
-  moveSpeed: 12
-  moveDirection: {x: -1, y: 0, z: 0}
 --- !u!58 &1507545390888636465
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -161,3 +143,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.8515625
+--- !u!114 &7388474029647444276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6876556826223138057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9946cb3ae72694ca68cc8ea60cd38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRelease: 0
+  releaseTime: 0
+  animator: {fileID: 5116838586006758422}
+  data: {fileID: 11400000, guid: 20e5e3346784e664185893015194a7a0, type: 2}
+  moveSpeed: 12
+  moveDirection: {x: -1, y: 0, z: 0}
+  player: {fileID: 0}

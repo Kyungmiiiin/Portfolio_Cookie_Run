@@ -6,12 +6,17 @@ using UnityEngine;
 public class Item : PooledObject
 {
     [SerializeField] Animator animator;
-    [SerializeField] ItemData data;
+    [SerializeField] public ItemData data;
     [SerializeField] float moveSpeed;
     [SerializeField] Vector3 moveDirection;
+    [SerializeField] public PlayerController player;
 
-
-    public void OnTriggerEnter2D(Collider2D collision)
+    private void Awake()
+    {
+        // Tag·Î Ã£±â
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+    }
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         Release();
     }

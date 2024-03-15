@@ -19,6 +19,8 @@ public class Jelly : PooledObject
                                                                                                                                                                                                                                               
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        IScore player = collision.GetComponent<IScore>();
+        player.GetScore(data.point, true);
         Release();
     }
 

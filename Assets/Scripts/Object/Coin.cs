@@ -15,9 +15,11 @@ public class Coin : PooledObject
        animator.runtimeAnimatorController = data.controller;
     }
 
-
+     
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        IScore player = collision.GetComponent<IScore>();
+        player.GetScore(data.coin, false);
         Release();
     }
 

@@ -75,7 +75,7 @@ public class SceneManager : Singleton<SceneManager>
             fade.color = Color.Lerp(fadeInColor, fadeOutColor, rate);
             yield return null;
         }
-    }
+    } 
 
     IEnumerator FadeIn()
     {

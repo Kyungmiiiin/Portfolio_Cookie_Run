@@ -29,6 +29,7 @@ public class Item : PooledObject
     private void Update()
     {
         Move();
+        
     }
 }
 

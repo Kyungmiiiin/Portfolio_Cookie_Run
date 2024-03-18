@@ -14,11 +14,10 @@ public class BoosterItem : Item
     {
         // 2초간 실행되고 원래로 돌아감
         Time.timeScale = 3f;
-        Debug.Log("3배");
-        yield return new WaitForSecondsRealtime(2f);
-        Debug.Log("2초");
+
+        yield return new WaitForSecondsRealtime(1.5f);
         
         Time.timeScale = 1f;
-        Debug.Log("1배");
+
     }
 }

@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -6,4 +8,5 @@ public class GameManager : Singleton<GameManager>
     {
         Debug.Log(GetInstanceID());
     }
+   
 }

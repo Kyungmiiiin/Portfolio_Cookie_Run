@@ -326,6 +326,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 922651400}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &174800255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 174800257}
+  - component: {fileID: 174800256}
+  m_Layer: 0
+  m_Name: GameScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &174800256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174800255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c92bf5710f7cd409bbb41fd5af827c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &174800257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174800255}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6759832, y: -1.4524566, z: 353.75208}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &197259776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,11 +1075,11 @@ GameObject:
   m_Component:
   - component: {fileID: 624035390}
   - component: {fileID: 624035394}
-  - component: {fileID: 624035396}
   - component: {fileID: 624035393}
   - component: {fileID: 624035392}
   - component: {fileID: 624035391}
   - component: {fileID: 624035395}
+  - component: {fileID: 624035396}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -1258,6 +1302,34 @@ MonoBehaviour:
   moveSpeed: 12
   jumpCount: 0
   isGround: 0
+  decreaseRate: 3
+  OnDied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1280732991}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 371651119}
+        m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
+        m_MethodName: StopAllCoroutines
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &659107233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5431083117323760549, guid: c1475546cb09cd14ab162c4622d34c5f, type: 3}
@@ -1777,8 +1849,8 @@ GameObject:
   - component: {fileID: 1131015923}
   - component: {fileID: 1131015922}
   m_Layer: 5
-  m_Name: Hp
-  m_TagString: Untagged
+  m_Name: HpUI
+  m_TagString: HpUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2313,7 +2385,7 @@ GameObject:
   - component: {fileID: 1501008994}
   - component: {fileID: 1501008993}
   m_Layer: 5
-  m_Name: Speed
+  m_Name: SpeedUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2676,7 +2748,7 @@ GameObject:
   - component: {fileID: 1603458678}
   m_Layer: 0
   m_Name: BackGround
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3175,7 +3247,7 @@ GameObject:
   - component: {fileID: 1929428061}
   - component: {fileID: 1929428060}
   m_Layer: 5
-  m_Name: Magnnet
+  m_Name: MagnetUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3837,7 +3909,7 @@ GameObject:
   - component: {fileID: 2138380697}
   - component: {fileID: 2138380696}
   m_Layer: 5
-  m_Name: Giant
+  m_Name: GiantUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3939,3 +4011,4 @@ SceneRoots:
   - {fileID: 1046316808}
   - {fileID: 1746905395}
   - {fileID: 1503474541}
+  - {fileID: 174800257}

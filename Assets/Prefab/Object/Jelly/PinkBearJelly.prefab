@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3802727065873310123}
   m_Layer: 14
   m_Name: PinkBearJelly
-  m_TagString: Untagged
+  m_TagString: Point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

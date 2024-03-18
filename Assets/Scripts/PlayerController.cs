@@ -9,6 +9,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 using UnityEngine.UI;
 using JetBrains.Annotations;
 
+
 public class PlayerController : MonoBehaviour, IScore
 {
     [Header("Components")]
@@ -21,16 +22,22 @@ public class PlayerController : MonoBehaviour, IScore
     [SerializeField] public int coinScore;
 
     [Header("Space")]
-    [SerializeField] public int hp;
+    [SerializeField] public float hp;
     [SerializeField] public int MaxHp;
     [SerializeField] float jumpPower;
-    [SerializeField] public float moveSpeed; 
+    [SerializeField] public float moveSpeed;
     [SerializeField] int jumpCount;
     [SerializeField] bool isGround;
+    public float decreaseRate;   // 시간당 체력 감소량
+    private float currentHealth; // 현재 체력
     float curYSize;
     float halfSize;
     float offset;
     float halfoffset;
+
+    [Header("Events")]
+    public UnityEvent OnDied;
+
 
     private void Start()
     {
@@ -38,9 +45,11 @@ public class PlayerController : MonoBehaviour, IScore
         halfSize = curYSize / 2;
         offset = collider.offset.y;
         halfoffset = collider.offset.y / 2;
+
+        hp = MaxHp; // 현재 체력을 시작 체력으로 초기화
+        // 1초마다 DecreaseHealthOverTime 메소드를 호출하여 시간당 체력 감소
+        InvokeRepeating("DecreaseHealthOverTime", 1f, 1f);
     }
-    // [Header("Events")]
-    //public UnityEvent OnDied;
     private void Jump()
     {
         // jumpspeed만큼 up
@@ -77,7 +86,6 @@ public class PlayerController : MonoBehaviour, IScore
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.gameObject.tag == "Obstacle")
         {
 
@@ -90,14 +98,14 @@ public class PlayerController : MonoBehaviour, IScore
             spriteRenderer.color = new Color(1, 1, 1, 0.4f);
 
             // 무적 상태의 시간
-            Invoke("OnTriggerExit", 5);
+            Invoke("OnTriggerExit", 3);
 
             if (this.hp != 0)
             {
                 // 충돌한 Obstacle의 dmg만큼 Player의 hp가 깎임
                 this.hp -= collision.gameObject.GetComponent<Obstacle>().data.dmg;
             }
-            else if(this.hp <= 0)
+            else if (this.hp <= 0)
             {
                 OnDie();
             }
@@ -166,25 +174,44 @@ public class PlayerController : MonoBehaviour, IScore
             collider.offset = new Vector2(collider.offset.x, offset);
         }
     }
+    private void DecreaseHealthOverTime()
+    {
+        hp -= decreaseRate; // 현재 체력을 시간당 감소량만큼 감소
 
-    private void OnDie()
+        if (hp <= 0)
+        {
+            OnDie(); // 체력이 0 이하이면 Die 메소드 호출
+        }
+    }
+
+    public void OnDie()
     {
         animator.SetBool("Die", true);
+        OnDied?.Invoke();
     }
+
+    private void DisableInputSystem()
+    {
+        // 현재 사용 중인 InputSystem을 비활성화합니다.
+        GetComponent<PlayerInput>().enabled = false;
+    }
+
 
     // bool 변수로 type을 나눠서 Jelly(true)와 Coin(false)를 구분함
     public void GetScore(int score, bool type)
     {
-       if(type)
+        if (type)
         {
             jellyScore += score;
         }
-       else
+        else
         {
             coinScore += score;
         }
     }
+
 }
+
 
 
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1408480929765647406}
   - component: {fileID: 6917745999644765810}
   - component: {fileID: 6749282365089199732}
-  - component: {fileID: 6178339121500968960}
+  - component: {fileID: -4991723664996279356}
   m_Layer: 0
   m_Name: MagnetItem
   m_TagString: Untagged
@@ -143,7 +143,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6178339121500968960
+--- !u!114 &-4991723664996279356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7605130690900176713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49a2ff3183a13ad4aa8148d94bc855c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 53745d8b085adb44a8a7ae902cb881a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   autoRelease: 0
@@ -161,3 +161,8 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: ed0d6f4b6af03f54cb2b5708f2e2fc80, type: 2}
   moveSpeed: 12
   moveDirection: {x: -1, y: 0, z: 0}
+  player: {fileID: 0}
+  magnetForce: 12
+  magnetRadius: 8
+  activationDuration: 2
+  sprite: {fileID: 1408480929765647406}

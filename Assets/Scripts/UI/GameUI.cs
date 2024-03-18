@@ -22,7 +22,7 @@ public class GameUI : MonoBehaviour
     private void UpdateHpBar()
     {
         // 현재 체력을 나타내줌
-        hpBar.fillAmount = playerController.hp / (float)playerController.MaxHp;
+        hpBar.fillAmount = playerController.hp / playerController.MaxHp;
     }
 
     private void UpdateCoinText()

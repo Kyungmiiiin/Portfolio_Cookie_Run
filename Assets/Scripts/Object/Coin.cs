@@ -19,7 +19,7 @@ public class Coin : PooledObject
     public void OnTriggerEnter2D(Collider2D collision)
     {
         IScore player = collision.GetComponent<IScore>();
-        player.GetScore(data.coin, false);
+        player?.GetScore(data.coin, false);
         Release();
     }
 

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 4028133101376230258}
   - component: {fileID: 143659298177606579}
   - component: {fileID: -196615480298236539}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: IceCream
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

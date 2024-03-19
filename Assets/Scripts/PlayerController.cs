@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 using static UnityEditor.Experimental.GraphView.GraphView;
 using UnityEngine.UI;
 using JetBrains.Annotations;
+using UnityEngine.EventSystems;
 
 
 public class PlayerController : MonoBehaviour, IScore
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour, IScore
     [SerializeField] BoxCollider2D collider;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] ObstacleData[] obstacleDatas;
+    [SerializeField] GameObject gameOverUI;
+    [SerializeField] GameObject gameUI;
     [SerializeField] public int jellyScore;
     [SerializeField] public int coinScore;
 
@@ -184,10 +187,26 @@ public class PlayerController : MonoBehaviour, IScore
         }
     }
 
-    public void OnDie()
+    public IEnumerator DieCoroutine()
     {
         animator.SetBool("Die", true);
+
+        yield return new WaitForSecondsRealtime(2.5f);
+
+        // 비활성화 해둔 GameOverUI를 활성화 시킴
+        gameOverUI.SetActive(true);
+
+        EventSystem eventSystem = gameOverUI.GetComponent<EventSystem>();
+        if (eventSystem != null)
+        {
+            eventSystem.enabled = true;
+        }
+    }
+    
+    public void OnDie()
+    {
         OnDied?.Invoke();
+        StartCoroutine(DieCoroutine());
     }
 
     private void DisableInputSystem()

@@ -71,7 +71,7 @@ public class SceneManager : Singleton<SceneManager>
 
         while (rate <= 1)
         {
-            rate += Time.deltaTime / fadeTime;
+            rate += Time.unscaledDeltaTime / fadeTime;
             fade.color = Color.Lerp(fadeInColor, fadeOutColor, rate);
             yield return null;
         }
@@ -85,7 +85,7 @@ public class SceneManager : Singleton<SceneManager>
 
         while (rate <= 1)
         {
-            rate += Time.deltaTime / fadeTime;
+            rate += Time.unscaledDeltaTime / fadeTime;
             fade.color = Color.Lerp(fadeOutColor, fadeInColor, rate);
             yield return null;
         }

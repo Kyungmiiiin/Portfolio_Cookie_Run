@@ -163,6 +163,6 @@ MonoBehaviour:
   moveDirection: {x: -1, y: 0, z: 0}
   player: {fileID: 0}
   magnetForce: 12
-  magnetRadius: 8
-  activationDuration: 2
+  magnetRadius: 10
+  activationDuration: 2.5
   sprite: {fileID: 1408480929765647406}
